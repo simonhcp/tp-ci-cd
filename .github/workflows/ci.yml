@@ -24,9 +24,15 @@ jobs:
       - name: Analyse du code avec SonarCloud
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_TOKEN: ${{ secrets. }}
         with:
             args: >
                 -Dsonar.organization=simonhcp
                 -Dsonar.projectKey=simonhcp_tp-ci-cd
                 -Dsonar.sources=.
+
+      - name: Analyse des dépendances avec Snyk
+        uses: snyk/actions/python@main
+        env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
