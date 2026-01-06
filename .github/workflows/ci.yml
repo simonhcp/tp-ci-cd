@@ -28,5 +28,5 @@ jobs:
         with:
             args: >
                 -Dsonar.organization=simonhcp
-                -Dsonar.projectKey=tp-ci-cd
+                -Dsonar.projectKey=simonhcp_tp-ci-cd
                 -Dsonar.sources=.
